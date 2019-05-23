@@ -10,6 +10,25 @@
   </head>
 
   <body>
-    <%= yield %>
+  <nav class="navbar navbar-light bg-light border-bottom justify-space-between">
+    <a class="navbar-brand" href="/">Github App</a>
+
+
+    <% if session['access_token'].nil? %>
+      <a class="btn btn-sm btn-outline-secondary" href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= ENV['GH_BASIC_CLIENT_ID'] %>">
+        <i class="fa fa-github"></i>
+        Log in with <b>Github</b>
+      </a>
+    <% else %>
+      <a class="btn btn-sm btn-outline-secondary" href="#">
+        <i class="fa fa-sign-out"></i>
+        Log out
+      </a>
+    <% end %>
+  </nav>
+    <div class="container pt-3">
+
+      <%= yield %>
+    </div>
   </body>
 </html>
