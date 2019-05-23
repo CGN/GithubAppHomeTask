@@ -1,5 +1,17 @@
 <% if session['access_token'].nil? %>
   <h1>Please log in</h1>
 <% else %>
-  <h1>Hi, <%= @user_info['name'] %></h1>
+
+  <div class="card" style="width: 24rem;">
+    <img src="<%= @user.avatar_url %>" alt="" class="card-img-top">
+    <div class="card-body">
+      <h5 class="card-title"><%= @user.name %></h5>
+      <p> <i class="fa fa-envelope"></i> <%= @user.email %></p>
+      <p> <i class="fa fa-map-marker"></i> <%= @user.location %></p>
+      <p>Created at: <%= @user.created_at %></p>
+      <p>Updated at: <%= @user.updated_at %></p>
+      <a href="<%= @user.html_url %>"> <i class="fa fa-github"></i> Github profile</a>
+    </div>
+  </div>
+  
 <% end %>
