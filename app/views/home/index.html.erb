@@ -5,7 +5,8 @@
   <div class="card" style="width: 24rem;">
     <img src="<%= @user.avatar_url %>" alt="" class="card-img-top">
     <div class="card-body">
-      <h5 class="card-title"><%= @user.name %></h5>
+      <h3 class="card-title"><%= @user.name %></h3>
+      <h5 class="text-muted"><%= @user.github_login %></h5>
       <p> <i class="fa fa-envelope"></i> <%= @user.email %></p>
       <p> <i class="fa fa-map-marker"></i> <%= @user.location %></p>
       <p>Created at: <%= @user.created_at %></p>

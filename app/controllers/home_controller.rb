@@ -22,6 +22,7 @@ class HomeController < ApplicationController
         user ||= User.new
         user.email = item['email']
         user.name = user_info['name']
+        user.github_login = user_info['login']
         user.avatar_url = user_info['avatar_url']
         user.html_url = user_info['html_url']
         user.location = user_info['location']
