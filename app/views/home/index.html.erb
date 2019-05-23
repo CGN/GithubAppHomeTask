@@ -1,1 +1,5 @@
-<h1>Please log in</h1>
+<% if session['access_token'].nil? %>
+  <h1>Please log in</h1>
+<% else %>
+  <h1>Hi, <%= @user_info['name'] %></h1>
+<% end %>
