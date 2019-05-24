@@ -3,6 +3,9 @@
 <% else %>
 
   <div class="card" style="width: 24rem;">
+    <div class="card-header">
+      <a class="btn btn-primary" href="<%= bonus_path %>">Bonus task</a>
+    </div>
     <img src="<%= @user.avatar_url %>" alt="" class="card-img-top">
     <div class="card-body">
       <h3 class="card-title"><%= @user.name %></h3>
@@ -11,7 +14,7 @@
       <p> <i class="fa fa-map-marker"></i> <%= @user.location %></p>
       <p>Created at: <%= @user.created_at %></p>
       <p>Updated at: <%= @user.updated_at %></p>
-      <a href="<%= @user.html_url %>"> <i class="fa fa-github"></i> Github profile</a>
+      <a class="card-link" href="<%= @user.html_url %>"> <i class="fa fa-github"></i> Github profile</a>
     </div>
   </div>
   

@@ -1,0 +1,29 @@
+<h1>Bonus task</h1>
+
+<div class="row">
+  <div class="card" style="width: 36rem">
+    <div class="card-header">
+      index.html from repo
+    </div>
+    <div class="card-body">
+      <pre><code><%= @content %></code></pre>
+      <a href="https://github.com/CGN/simple-html-page/blob/master/index.html" class="card-link">Github repo</a>
+      <a href="https://cgn.github.io/simple-html-page/index.html" class="card-link">Github pages</a>
+
+      <a href="<%= update_repo_path %>?add=true" class="card-link">Add snippets in repo</a>
+      <a href="<%= update_repo_path %>?add=false" class="card-link">Remove snippets in repo</a>
+    </div>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="card" style="width: 36rem">
+    <div class="card-header">
+      Modified index.html
+    </div>
+    <div class="card-body">
+      <pre><code><%= @content_modified %></code></pre>
+      <a href="<%= modified_page_path %>" class="card-link">Open from action</a>
+    </div>
+  </div>
+</div>

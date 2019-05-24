@@ -15,7 +15,7 @@
 
 
     <% if session['access_token'].nil? %>
-      <a class="btn btn-sm btn-outline-secondary" href="https://github.com/login/oauth/authorize?scope=user:email&client_id=<%= ENV['GH_BASIC_CLIENT_ID'] %>">
+      <a class="btn btn-sm btn-outline-secondary" href="https://github.com/login/oauth/authorize?scope=user:email repo&client_id=<%= ENV['GH_BASIC_CLIENT_ID'] %>">
         <i class="fa fa-github"></i>
         Log in with <b>Github</b>
       </a>
