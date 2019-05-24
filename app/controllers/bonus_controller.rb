@@ -21,32 +21,32 @@ class BonusController < ApplicationController
     github_client = GithubClient.new
     response = content_info
     content = Base64.decode64 response['content']
-    if params[:add]
+
+    puts params[:repo_action]
+    if params[:repo_action] == 'add'
       content_modified = Base64.encode64(add_snippets(content))
-      @result = github_client.update_content(session['access_token'],
-                                             owner: 'CGN',
-                                             repo: 'simple-html-page',
-                                             path: 'index.html',
-                                             message: 'Added snippets',
-                                             name: 'Nurlan',
-                                             email: 'cg.nurlan@gmail.com',
-                                             content: content_modified,
-                                             sha: response['sha']
-      )
-    else
+      github_client.update_content(session['access_token'],
+                                   owner: 'CGN',
+                                   repo: 'simple-html-page',
+                                   path: 'index.html',
+                                   message: 'Added snippets',
+                                   name: 'Nurlan',
+                                   email: 'cg.nurlan@gmail.com',
+                                   content: content_modified,
+                                   sha: response['sha'])
+    elsif params[:repo_action] == 'remove'
       content_modified = Base64.encode64(remove_snippets(content))
-      @result = github_client.update_content(session['access_token'],
-                                             owner: 'CGN',
-                                             repo: 'simple-html-page',
-                                             path: 'index.html',
-                                             message: 'Snippets removed',
-                                             name: 'Nurlan',
-                                             email: 'cg.nurlan@gmail.com',
-                                             content: content_modified,
-                                             sha: response['sha']
-      )
+      github_client.update_content(session['access_token'],
+                                   owner: 'CGN',
+                                   repo: 'simple-html-page',
+                                   path: 'index.html',
+                                   message: 'Snippets removed',
+                                   name: 'Nurlan',
+                                   email: 'cg.nurlan@gmail.com',
+                                   content: content_modified,
+                                   sha: response['sha'])
     end
-    puts @result
+
     redirect_to bonus_path
   end
 
