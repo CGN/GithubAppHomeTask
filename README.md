@@ -1,5 +1,9 @@
 # README
 
+* Environments
+    * GH_BASIC_CLIENT_ID - Client ID 
+    * GH_BASIC_SECRET_ID - Client Secret
+
 * Login with Github (home_controller.rb):
     * HTTParty is used as a HTTP client
     * On callback user will be created/updated in database
