@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Login with Github (home_controller.rb):
+    * HTTParty is used as a HTTP client
+    * On callback user will be created/updated in database
+    * access_token and user_id stored in session for simplicity (it's not secure)
 
-Things you may want to cover:
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Bonus part (bonus_controller.rb):
+    * Nokogiri is used to change the index.html
+    * 'update_repo' action to add/remove snippets from repo
+    * 'bonus_modified_page' action returns the index.html from repo with snippets
+    
