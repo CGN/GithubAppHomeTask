@@ -58,4 +58,4 @@ gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 
-gem 'httparty', '~> 0.17.0'
+gem 'httparty', '~> 0.21.0'
